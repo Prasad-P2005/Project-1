@@ -1,0 +1,5 @@
+
+xhost +SI:localuser:root
+export DISPLAY=:1
+sudo env "DISPLAY=$DISPLAY" "XAUTHORITY=$XAUTHORITY" myenv/bin/python3 main.py
+
