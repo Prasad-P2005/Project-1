@@ -1,4 +1,51 @@
+# Typeracer Automation Bot
 
+A Python-based automation tool that interacts with the [Typeracer](https://play.typeracer.com) game.  
+It uses **Selenium WebDriver** and **BeautifulSoup** to scrape the on-screen race text, and **PyAutoGUI** to simulate human-like typing.
+
+---
+
+## 📌 Highlights
+- Automated browser control using **Selenium** with Chromium.
+- Web scraping via **BeautifulSoup** to parse race text dynamically.
+- Keyboard event handling with **keyboard** library to trigger execution.
+- Automated typing simulation with adjustable speed using **PyAutoGUI**.
+- Clean, modular Python functions following best practices.
+
+---
+
+## 🛠 Technologies Used
+- **Python 3**
+- **Selenium** – Web browser automation
+- **BeautifulSoup4** – HTML parsing
+- **PyAutoGUI** – GUI automation for keyboard input
+- **Keyboard** – Global hotkey listener
+- **Chromium** + **ChromeDriver**
+
+---
+
+## ⚙️ How It Works
+1. **Browser Launch**  
+   - Opens the Typeracer website in Chromium via Selenium.
+
+2. **Text Extraction**  
+   - Uses BeautifulSoup to parse the loaded HTML and retrieve all words marked as "unselectable" (Typeracer’s race text).
+
+3. **Hotkey Trigger**  
+   - Waits for the user to press `CTRL + ALT + T` before starting the automated typing.
+
+4. **Typing Simulation**  
+   - Sends keystrokes to the browser at a configurable interval (default: `0.06` seconds per character) to simulate natural typing.
+
+---
+
+## 📂 Installation & Usage
+
+### 1️⃣ Install Dependencies
+```bash
+pip install selenium beautifulsoup4 pyautogui keyboard
+
+if using i3 env->
 xhost +SI:localuser:root
 export DISPLAY=:1
 sudo env "DISPLAY=$DISPLAY" "XAUTHORITY=$XAUTHORITY" myenv/bin/python3 main.py
